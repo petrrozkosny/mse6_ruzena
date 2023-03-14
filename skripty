@@ -40,3 +40,7 @@ ____________________________________________________
 
 _________________________________________________________________
 14 pocet dnu maximalni teploty:=COUNTX(FILTER(data;data[maximalni_teplota] = MAX(data[maximalni_teplota]));data[datum])
+
+_____________________________________________________________
+
+16 maximalni teplota mesic rok 2019:=MAXX(FILTER(data;data[rok] = 2019);data[maximalni_teplota])
