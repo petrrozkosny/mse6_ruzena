@@ -24,3 +24,7 @@ ____________________________________
 _____________________________________________
 
 09 suma srazek prvni tri mesice:=SUMX(FILTER(data;data[mesic] <=3);data[srazky])
+
+______________________________________________
+
+10 pocet dnu ruzyne prselo:=COUNTX(FILTER(data;data[srazky] >0 && data[lokalita] = "RUZYNE");data[datum])
