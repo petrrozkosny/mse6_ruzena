@@ -18,3 +18,6 @@ ____________________________
 06 suma srazek kumulativne:=SUMX(FILTER(ALL(data);data[lokalita] =max(data[lokalita]) && data[rok] = MAX(data[rok]) && data[mesic] <=MAX(data[mesic]));data[srazky])
 _______________________________
 07 srazky dle vyberu:=IF(MAX(typ_srazek[typ_srazek]) = "prubezne";[05 suma srazek prubezne];[06 suma srazek kumulativne])
+____________________________________
+
+08 suma srazek predchozi rok:=SUMX(FILTER(ALL(data);data[rok]  = max(data[rok]) - 1);data[srazky])
