@@ -51,3 +51,8 @@ _____________________________________________
 _________________________________________________
 
 18 rozdil max teplot:=MAX(data[maximalni_teplota]) - MAXX(ALL(data);data[maximalni_teplota])
+___________________________________________________________
+19 minimalni datum maximalni teploty:=MINX(FILTER(data;data[maximalni_teplota] = MAX(data[maximalni_teplota]));data[datum])
+______________________________________________________
+20 pocet dnu ruzyne:=COUNTX(FILTER(data;data[srazky] >0 && data[lokalita] = "RUZYNE");data[datum])
+
