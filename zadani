@@ -1,0 +1,92 @@
+1. Načíst 3 tabulky z mse6-data.xlsx
+2. Připojit do nového dotazu data_nova a data_stara
+3. Připojit1 přejmenovat na data
+4. Do data z dim_oblasti sloučit informaci o zemi stanice
+___________________________________________________________
+
+5. Upravit datové typy sloupců
+6. Dopočítat sloupce:
+6a. rok: rok ze sloupce [datum]
+6b. typ_pocasi: pokud maximalni_teplota > 30, tak "tropicky den", jinak "netropicky den"
+7. Upravit existující sloupce:
+7a. data[lokalita] převést na malá písmena
+7b. data[lokalita] zbavit nadbytečných mezer
+_____________________________________________________________
+
+8. Seskupit (agregovat) dotaz data dle sloupců lokalita, rok a v rámci agregace:
+8a. suma srážek
+8b. maximální srážky
+8c. maximální maximalni_teplota
+____________________________________________________________
+
+9. vytvořit dotaz dim_roky s unikátními hodnotami ve sloupci rok
+10. DO power pivot nahrát pouze dim_oblasti, data, dim_roky
+11. Vytvořit relace mezi tabulkami datového modelu
+
+
+1. Ze souboru mse6-data.xlsx nahrajte všechny 3 tabulky
+2. Připojte do nového dotazu data_nova a data_stara,  nově vytvořený dotaz
+přejmenujte na "data"
+3. Vyplňte směrem dolů prázdné hodnoty v dotazu dim_oblasti, přejmenujte sloupec země na zeme
+4. Vytvořte tabulku dim_datumy z data, ve které bude jediný sloupec datum zbavený duplicit
+
+
+
+5. Do dotazu dim_datumy dopočítejte sloupce:
+	- rok
+	- mesic
+	- predchozi_rok (tj. hodnota ve sloupci rok mínus 1)
+6. V dotazu data zachovejte pouze sloupce
+	- datum
+	- lokalita
+	- srazky
+
+7. Nahrajte do datového modelu dotazy:
+	- data
+	- dim_oblasti
+	- dim_datumy
+Pozn. všechny dotazy z Power Query budou v režimu "Připojení" bez nahrávání do Excel tabulky
+8. V Power Pivot vytvořte relace mezi tabulkami
+
+
+9. Vytvořte list těmito vizuály:
+9a. Kontingenční tabulka:
+	- řádky: dim_datumy[mesic]
+	- sloupce: dim_oblasti[stanice]
+	- hodnoty: suma data[srazky]
+9b. Průřez nad sloupcem dim_oblasti[zeme]
+9c. Průřez nad sloupcem dim_datumy[rok]
+9d. Kontingenční tabulka:
+	- řádky: dim_oblasti[zeme]
+	- hodnoty: suma data[srazky]
+10. Kontingenční tabulku z bodu 9 a jeho dílčích bodů napojte na průřez z bodu 9c, ale 
+nenapojujte na průřez z bodu 9b
+
+
+
+15 maximální maximalni_teplota v daném měsíc
+16 maximální maximalni_teplota v daném měsíc v roce 2019
+17 maximální maximalni_teplota v dném měsíci v roce 2019 a lokalite RUZYNE
+____________________________________________
+18 rozdíl mezi maximalni_teplota v daném mesic a maximalni_teplota za všechny mesic
+19 minimální datum maximální maximalni_teplota v daném mesic
+20 počet datum v danem mesic, ve kterém byly srazky >0 v lokalite RUZYNE
+____________________________________________
+21 maximální datum ruzyne v daném měsíci pro maximální maximalni_teplotu v ruzyni 
+v daném měsíci
+22 kumulativní suma srazky v roce 2000 v lokalitě RUZYNE
+____________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
