@@ -37,3 +37,6 @@ ____________________________________________________
 ____________________________________________________
 
 13 minimalni datum maximalni teploty v danem roce:=MINX(FILTER(data;data[maximalni_teplota] = MAX(data[maximalni_teplota]));data[datum])
+
+_________________________________________________________________
+14 pocet dnu maximalni teploty:=COUNTX(FILTER(data;data[maximalni_teplota] = MAX(data[maximalni_teplota]));data[datum])
