@@ -44,3 +44,6 @@ _________________________________________________________________
 _____________________________________________________________
 
 16 maximalni teplota mesic rok 2019:=MAXX(FILTER(data;data[rok] = 2019);data[maximalni_teplota])
+_____________________________________________
+
+17 maximalni teplota mesic ruzyne:=MAXX(FILTER(data;data[rok] = 2019 && data[lokalita] = "RUZYNE");data[maximalni_teplota])
