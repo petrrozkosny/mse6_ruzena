@@ -11,3 +11,10 @@ _____________________
 ______________________
 
 04 suma srazek kosice:=SUMX(FILTER(all(data);data[lokalita] = "KOSICE");data[srazky])
+__________________________
+05 suma srazek prubezne:=SUM(data[srazky])
+
+____________________________
+06 suma srazek kumulativne:=SUMX(FILTER(ALL(data);data[lokalita] =max(data[lokalita]) && data[rok] = MAX(data[rok]) && data[mesic] <=MAX(data[mesic]));data[srazky])
+_______________________________
+07 srazky dle vyberu:=IF(MAX(typ_srazek[typ_srazek]) = "prubezne";[05 suma srazek prubezne];[06 suma srazek kumulativne])
