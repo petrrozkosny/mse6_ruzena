@@ -33,5 +33,7 @@ ____________________________________________
 11 maximalni teplota:=MAX(data[maximalni_teplota])
 
 ____________________________________________________
+12 podil rocnich srazek na celku:=SUM(data[srazky]) / SUMX(ALL(data);data[srazky])
+____________________________________________________
 
 13 minimalni datum maximalni teploty v danem roce:=MINX(FILTER(data;data[maximalni_teplota] = MAX(data[maximalni_teplota]));data[datum])
