@@ -21,3 +21,6 @@ _______________________________
 ____________________________________
 
 08 suma srazek predchozi rok:=SUMX(FILTER(ALL(data);data[rok]  = max(data[rok]) - 1);data[srazky])
+_____________________________________________
+
+09 suma srazek prvni tri mesice:=SUMX(FILTER(data;data[mesic] <=3);data[srazky])
